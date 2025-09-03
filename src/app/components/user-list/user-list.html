@@ -1,33 +1,36 @@
-<section class="container-fluid">
-  <section class="row my-4">
-    <input type="text" class="form-control w-custom-200" placeholder="Search by name or email"
-      [formControl]="userSearch" autocomplete="off" />
+<div class="app-wrapper">
+  <section class="container-fluid">
+    <section class="row my-4">
+      <input type="text" class="form-control w-custom-200" placeholder="Search by name or email"
+        [formControl]="userSearch" autocomplete="off" />
 
-    <button type="button" class="btn btn-outline-success w-custom-200" (click)="toggleView()">Change to {{isListView() ?
-      'Card' :
-      'List'}} View</button>
+      <button type="button" class="btn btn-outline-success w-custom-200" (click)="toggleView()">Change to {{isListView()
+        ?
+        'Card' :
+        'List'}} View</button>
+    </section>
   </section>
-</section>
 
 
 
-@if (currentPageUsers().length) {
-@if (isListView()) {
-<app-list-view [users]="currentPageUsers()"></app-list-view>
-} @else {
-<app-card-view [users]="currentPageUsers()"></app-card-view>
-}
-}
+  @if (currentPageUsers().length) {
+  @if (isListView()) {
+  <app-list-view [users]="currentPageUsers()"></app-list-view>
+  } @else {
+  <app-card-view [users]="currentPageUsers()"></app-card-view>
+  }
+  }
 
-<br>
-<!-- Pagination -->
-@if (filteredUsers().length) {
-<ngb-pagination [collectionSize]="filteredUsers().length" [pageSize]="5" [page]="currentPage()"
-  (pageChange)="setCurrentPage($event)" [maxSize]="5" [rotate]="true" [ellipses]="true" [boundaryLinks]="false"
-  aria-label="User pagination" class="d-flex justify-content-end">
-</ngb-pagination>
-} @else if (loading()) {
-<p>Loading users...</p>
-} @else {
-<p>No users found.</p>
-}
+  <br>
+  <!-- Pagination -->
+  @if (filteredUsers().length) {
+  <ngb-pagination [collectionSize]="filteredUsers().length" [pageSize]="5" [page]="currentPage()"
+    (pageChange)="setCurrentPage($event)" [maxSize]="5" [rotate]="true" [ellipses]="true" [boundaryLinks]="false"
+    aria-label="User pagination" class="d-flex justify-content-end">
+  </ngb-pagination>
+  } @else if (loading()) {
+  <p>Loading users...</p>
+  } @else {
+  <p>No users found.</p>
+  }
+</div>
