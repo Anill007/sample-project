@@ -1,0 +1,17 @@
+<section class="container-fluid px-0">
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-2 gy-0">
+    @for (user of users(); track user.id) {
+    <div class="col">
+      <div class="card h-100" (click)="navigateToDetail(user.id)" style="cursor: pointer;">
+        <div class="card-body">
+          <h5 class="card-title">{{ user.name }}</h5>
+          <p class="card-text">
+            <strong>ID:</strong> {{ user.id }}<br />
+            <strong>Email:</strong> {{ user.email }}
+          </p>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</section>
