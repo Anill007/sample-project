@@ -1,0 +1,42 @@
+<div class="container py-4">
+  <button class="btn btn-secondary mb-3" (click)="goBack()">
+    ← Back to list
+  </button>
+
+  @if (user()) {
+  <div class="card">
+    <div class="card-header">
+      <h4>{{ user().name }} ({{ user().username }})</h4>
+      <p class="mb-0"><strong>Email:</strong> {{ user().email }}</p>
+      <p class="mb-0"><strong>Phone:</strong> {{ user().phone }}</p>
+      <p class="mb-0"><strong>Website:</strong> <a href="https://{{ user().website }}" target="_blank">{{ user().website
+          }}</a></p>
+    </div>
+
+    <div class="card-body">
+      <!-- Address -->
+      <h5>Address</h5>
+      <ul class="list-group mb-3">
+        <li class="list-group-item"><strong>Street:</strong> {{ user().address.street }}</li>
+        <li class="list-group-item"><strong>Suite:</strong> {{ user().address.suite }}</li>
+        <li class="list-group-item"><strong>City:</strong> {{ user().address.city }}</li>
+        <li class="list-group-item"><strong>Zipcode:</strong> {{ user().address.zipcode }}</li>
+        <li class="list-group-item"><strong>Geo:</strong> Lat: {{ user().address.geo.lat }}, Lng: {{
+          user().address.geo.lng }}</li>
+      </ul>
+
+      <!-- Company -->
+      <h5>Company</h5>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Name:</strong> {{ user().company.name }}</li>
+        <li class="list-group-item"><strong>Catch Phrase:</strong> {{ user().company.catchPhrase }}</li>
+        <li class="list-group-item"><strong>BS:</strong> {{ user().company.bs }}</li>
+      </ul>
+    </div>
+  </div>
+  } @else if (loading()) {
+    <p>Loading.....</p>
+  } @else {
+    <p>User not found.</p>
+  }
+</div>
