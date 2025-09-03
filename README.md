@@ -1,59 +1,38 @@
-# BasicCRUD
+# 📌 Project Overview
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+## 🚀 Available Routes
+- `/` → **Entry page** (list of users)  
+- `/users/:id` → **User detail page**  
+- `/404` → **Not Found page**  
 
-## Development server
+---
 
-To start a local development server, run:
+## 📖 Description
+This Angular project demonstrates a modern **zoneless application** with reactive state management using **signals** and **observer patterns**.  
 
-```bash
-ng serve
-```
+- The **entry page** fetches a list of users from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/users).  
+- Users are displayed in **card** and **list views**, with **search** and **pagination** features to filter results.  
+- Clicking on a card or table row navigates to the **user detail page**, showing more information.  
+- If the requested resource exists, details are shown. Otherwise, a **404 page** notifies the user.  
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## ✨ Features
+- 🔄 **Observer Pattern** – Fetch data with `HttpClient` and update UI reactively.  
+- ⚡ **Angular Signals** – Manage reactivity (e.g., search and pagination in user-list).  
+- 🌀 **Zoneless Angular** – Performance-optimized without relying on `zone.js`.  
+- 🧩 **Dependency Injection** – Using both `injector()` API and traditional constructor injection.  
+- 🛣️ **Angular Routing** – Navigate between pages, set/query params, and fetch route params.  
+- 🎨 **Bootstrap + ng-bootstrap** – Responsive styling and UI components.  
+- 📥 **Input Signals** – Reactive inputs between components.  
+- 📝 **Reactive Forms** – Using `formControl()` in sync with signals for dynamic form handling.  
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🛠️ Tech Stack
+- **Angular** (latest)  
+- **Bootstrap** / **ng-bootstrap**  
+- **JSONPlaceholder API** (for demo data)  
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
